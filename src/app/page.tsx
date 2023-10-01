@@ -1,112 +1,49 @@
-import Image from 'next/image'
+import ClientIcon from "@/components/ClientIcon";
+import ParticlesHeader from "@/components/ParticlesHeader";
+import { Navbar } from "@/components/layout/Navbar";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="relative flex flex-col min-h-screen h-screen bg-[#ffffff] duration-300">
+      <div className="relative flex w-full h-[45%] overflow-hidden">
+        <div className="relative">
+          <Image src="/background.png" width={1920} height={1080} alt="Minecraft Background" className="w-full h-full object-cover object-top" />
+          <ParticlesHeader />
+          <canvas data-generated="true" style={{ width: "100%", pointerEvents: "none" }} width="1980" height="475" />
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col absolute w-full h-1/2 z-10 select-none">
+        <Navbar />
+        <section className="flex my-auto">
+          <div className="flex relative h-20 w-52 bg-black bg-opacity-30 rounded-xl my-auto ml-[20%]">
+            <div className="flex w-full hover:scale-[1.035] duration-300 items-center cursor-pointer">
+              <ClientIcon icon="mdi:cube-outline" className="text-4xl text-white ml-5 opacity-75 w-8 mt-0.5" />
+              <div className="ml-4">
+                <p className="uppercase font-medium text-white tracking-wide">MyServer.net</p>
+                <p className="text-white tracking-wide opacity-75 text-sm">4 players online</p>
+              </div>
+            </div>
+          </div>
+          <Link href="/" className="m-auto hover:scale-[1.02] duration-300">
+            <Image src={"/logo.png"} alt="Minecraft Server Logo" height={300} width={300} className="animate-bounce-soft" />
+          </Link>
+          <div className="flex relative h-20 w-52 bg-black bg-opacity-30 rounded-xl my-auto mr-[20%]">
+            <div className="flex w-full hover:scale-[1.035] duration-300 items-center cursor-pointer">
+              <ClientIcon icon="iconoir:discord" className="text-4xl text-white ml-5 opacity-75 w-8 mt-0.5" />
+              <div className="ml-4">
+                <p className="uppercase font-medium text-white tracking-wide">Join Discord</p>
+                <p className="text-white tracking-wide opacity-75 text-sm">40 users online</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="flex mx-[15%] my-5 bg-[#eaeaea] h-12 rounded-xl">
+        <ClientIcon icon="ion:home" className="ml-10 my-auto opacity-30 w-[16px]" />
+        <ClientIcon icon="ph:caret-right-thin" className="text-[65px] opacity-[0.02] ml-5 -mt-2 w-[65px]" />
+        <p className="text-[#9ba0a7] my-auto font-semibold ml-5">News</p>
       </div>
     </main>
   )
