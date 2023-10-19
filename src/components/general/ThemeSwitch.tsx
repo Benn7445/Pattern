@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import ClientIcon from "../ClientIcon";
+import ClientIcon from "./ClientIcon";
 
 export const ThemeSwitch = () => {
 

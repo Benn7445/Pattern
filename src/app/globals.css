@@ -41,10 +41,23 @@
   opacity: 1;
 }
 
-img, a {
+img,
+a {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+}
+
+.scale {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.group:hover .scale {
+  -webkit-transform: rotate(2deg) scale(1.15);
+  -ms-transform: rotate(2deg) scale(1.15);
+  transform: rotate(2deg) scale(1.15);
 }
