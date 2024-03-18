@@ -1,4 +1,4 @@
-# Minecraft Server Website with Next.js 13
+# Forum with Next.js 13
 Pattern project built with Next.js 13. 
 In this repository, you'll find the source code and necessary files to build a website specifically designed for managing and presenting a Minecraft server.
 
